@@ -68,8 +68,8 @@ pub struct Sprite3dCaches {
 impl Default for Sprite3dCaches {
     fn default() -> Self {
         Sprite3dCaches {
-            mesh_cache: HashMap::new(),
-            material_cache: HashMap::new(),
+            mesh_cache: HashMap::default(),
+            material_cache: HashMap::default(),
         }
     }
 }

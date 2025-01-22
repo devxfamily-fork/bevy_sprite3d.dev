@@ -10,10 +10,25 @@ repository = "https://github.com/FraserLee/bevy_sprite3d"
 keywords = ["gamedev", "bevy", "sprite", "3d"]
 
 [dependencies.bevy]
-version = "0.15"
+path = "../bevy"
 default-features = false
-features = ["bevy_asset", "bevy_pbr", "bevy_sprite", "png"]
+features = [
+  "bevy_asset",
+  "bevy_pbr",
+  "bevy_sprite",
+  "png"
+]
 
 [dev-dependencies]
-bevy.version = "0.15" # (include default features when running examples)
-rand = "0.8"
+rand = "0.8.5"
+
+[dev-dependencies.bevy]
+path = "../bevy"
+default-features = false
+features = [
+  "bevy_state",
+  "bevy_winit",
+  "tonemapping_luts",
+  "multi_threaded",
+  "x11",
+]

@@ -1,7 +1,7 @@
 use bevy::{prelude::*, window::WindowResolution};
 use bevy::core_pipeline::bloom::Bloom;
 use bevy::core_pipeline::tonemapping::Tonemapping;
-use bevy::utils::Duration;
+use std::time::Duration;
 use bevy::pbr::ScreenSpaceAmbientOcclusion;
 use bevy::core_pipeline::experimental::taa::TemporalAntiAliasing;
 
