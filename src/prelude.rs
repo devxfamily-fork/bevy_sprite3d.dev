@@ -1,4 +1,1 @@
-pub use crate::{
-    Sprite3d,
-    Sprite3dPlugin,
-};
+pub use crate::{Sprite3d, Sprite3dPlugin};
