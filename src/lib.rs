@@ -98,7 +98,14 @@ fn bundle_builder(
 ) {
     for (mut sprite3d, mut mesh, mut mat, sprite, e) in query.iter_mut() {
         // get image dimensions
-        let image_size = images.get(&sprite.image).unwrap().texture_descriptor.size;
+        let Some(image) = images.get(&sprite.image) else {
+            continue;
+        };
+        let mut image_size = image.texture_descriptor.size;
+        if let Some(custom_size) = sprite.custom_size {
+            image_size.width = custom_size.x as u32;
+            image_size.height = custom_size.y as u32;
+        }
         // w & h are the world-space size of the sprite.
         let w = (image_size.width as f32) / sprite3d.pixels_per_metre;
         let h = (image_size.height as f32) / sprite3d.pixels_per_metre;
